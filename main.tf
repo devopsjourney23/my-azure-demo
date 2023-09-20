@@ -43,7 +43,7 @@ resource "azurerm_linux_virtual_machine" "free5gc" {
 }
 
 #Creating null_resource for execution of readiness scripts
-resource "null_resource" "pre_readiness_script" {
+resource "null_resource" "k8s_readiness_script" {
   connection {
     host        = azurerm_public_ip.lb-pubip.ip_address
     user        = "lax"

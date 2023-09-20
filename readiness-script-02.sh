@@ -10,7 +10,9 @@ cd /home/lax/
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube start --memory='6g' --cpus='4'
-echo 'alias kubectl="minikube kubectl --"' >> ~/.bashrc
+echo "alias k=kubectl" >> ~/.bashrc
+echo "complete -o default -F __start_kubectl k" >> ~/.bashrc
+source ~/.bashrc
 sleep 30
 git clone https://github.com/k8snetworkplumbingwg/multus-cni.git
 cd multus-cni
